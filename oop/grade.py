@@ -20,7 +20,7 @@ class Grade:
         return self.sum/len(self.marks)
 
     def grade(self, avg):
-        if (avg > 90 and avg <= 100) :
+        if (avg > 90) :
             return "A"
         elif (avg > 80 and avg <= 90) :
             return "B"
@@ -39,12 +39,12 @@ class Grade:
         student = Grade(input("이름을 입력하세요."), [])
 
         #점수 Prompt
-        for i in ['국어', '영어', '수학']:
+        for sub in ['국어', '영어', '수학']:
             try:
-                student.addMarks(int(input(f"{i} 점수는 몇점인가요?")))
+                student.addMarks(int(input(f"{sub} 점수는 몇점인가요?")))
             except:
                 print("숫자만 입력해주세요.")
-                student.addMarks(input(f"{i} 점수는 몇점인가요?"))
+                student.addMarks(input(f"{sub} 점수는 몇점인가요?"))
 
         #평균 계산
         avg = student.avg()
